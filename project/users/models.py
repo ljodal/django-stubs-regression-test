@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
+from typing_extensions import reveal_type
 
 from .managers import UserQuerySet
 

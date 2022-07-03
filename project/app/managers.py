@@ -1,16 +1,17 @@
-from typing import TYPE_CHECKING, Optional
+from typing import TypeVar
 
 from django.db import models
 
-if TYPE_CHECKING:
-    from .models import MyModel
+T = TypeVar("T", bound=models.Model)
 
 
-class MyManager(models.Manager):
-    def my_manager_method(self) -> None:
-        ...
+class MyQuerySet(models.QuerySet[T]):
+    pass
 
 
-class MyQuerySet(models.QuerySet["MyModel"]):
-    def my_method(self, arg: int) -> Optional["MyModel"]:
-        return self.first()
+class MyManager(models.Manager[T]):
+    pass
+
+
+class SecondManager(models.Manager[T]):
+    pass

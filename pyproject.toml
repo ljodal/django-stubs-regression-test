@@ -11,7 +11,7 @@ psycopg2 = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.961"
-django-stubs = "^1.12.0"
+django-stubs = {git = "https://github.com/flaeppe/django-stubs", rev = "fix/type-queryset-as-manager"}
 black = "^22.3.0"
 flake8 = "^4.0.1"
 isort = "^5.10.1"
